@@ -19,22 +19,22 @@ namespace Assignment_2
             Console.WriteLine($"{Name}");
         }
 
-        public void AddPlay1(int number)
+        public void AddPlay1(int number) //SO
         {
             numOfPlays1.Add(number);
         }
 
-        public void AddPlay2(int number)
+        public void AddPlay2(int number)//SO
         {
             numOfPlays2.Add(number);
         }
 
-        public void AddNumbers1(double number)
+        public void AddNumbers1(double number)//TOM
         {
             PLayerOneScore.Add(number);
         }
 
-        public void AddNumbers2(double number)
+        public void AddNumbers2(double number)//TOM
         {
             PLayerTwoScore.Add(number);
         }
@@ -61,7 +61,7 @@ namespace Assignment_2
             return counter;
         }
 
-        public virtual double Sum1()
+        public virtual double Sum1()//TOM
         {
             double counter = 0;
             foreach (var number in PLayerOneScore)
@@ -72,7 +72,7 @@ namespace Assignment_2
             return counter;
         }
 
-        public virtual double Sum2()
+        public virtual double Sum2()//TOM
         {
             double counter = 0;
             foreach (var number in PLayerTwoScore)
@@ -99,7 +99,7 @@ namespace Assignment_2
     }
 
 
-    class Player1Score : CurrentPlayer
+    class Player1Score : CurrentPlayer//TOM
     {
         public override double Sum1()
         {
@@ -114,7 +114,7 @@ namespace Assignment_2
         }
     }
 
-    class Player2Score : CurrentPlayer
+    class Player2Score : CurrentPlayer//TOM
     {
         public override double Sum2()
         {
@@ -137,7 +137,7 @@ namespace Assignment_2
         }
     }
 
-    class numberOfplays1 : CurrentPlayer
+    class numberOfplays1 : CurrentPlayer//SO
     {
         public override int totalPlays1()
         {
@@ -151,7 +151,7 @@ namespace Assignment_2
         }
     }
 
-    class numberOfplays2 : CurrentPlayer
+    class numberOfplays2 : CurrentPlayer//SO
     {
         public override int totalPlays2()
         {
