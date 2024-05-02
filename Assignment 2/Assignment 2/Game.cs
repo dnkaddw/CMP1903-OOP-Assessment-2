@@ -18,12 +18,12 @@ namespace Assignment_2
             this.currentPlayer = 0;
         }
 
-        public void Game()
+        public void Game() //calculates which players turn it is using Mod
         {
             currentPlayer = (currentPlayer + 1) % players.Length;
         }
 
-        public void PlayCurrentPlayer()
+        public void PlayCurrentPlayer() //out puts which player is currently playing
         {
             players[currentPlayer].Playing();
         }
@@ -77,7 +77,7 @@ namespace Assignment_2
 
             Player1Score integerList1 = new Player1Score();
             Player2Score integerList2 = new Player2Score();
-            SwapPlayer swap = new SwapPlayer(players);
+            SwapPlayer swap = new SwapPlayer(players); //allows the swap class to have the names of the different players
 
             numberOfplays1 player1Plays = new numberOfplays1();
             numberOfplays2 player2Plays = new numberOfplays2();
@@ -89,8 +89,8 @@ namespace Assignment_2
             {
                 Console.WriteLine("-----------------------------------------------------------");
 
-                swap.PlayCurrentPlayer();
-                swap.Game();
+                swap.PlayCurrentPlayer();//calculates the current player
+                swap.Game();//outputs which player is currently playing
 
                 Dice1 = dieValues.Roll();
                 Dice2 = dieValues.Roll();
@@ -102,7 +102,7 @@ namespace Assignment_2
                 Console.WriteLine("Die 2: " + Dice2);
                 Console.WriteLine("Sum of die: " + result);
 
-                testValues.sevensOut(result);
+                testValues.sevensOut(result); //allows us to check if the result is equal to 7
 
                 int playerNow = swap.currentPlayer;
 
@@ -173,16 +173,12 @@ namespace Assignment_2
 
             if (knowHS == "y")
             {
-                HighScore winner = new HighScore();
+                HighScore winner = new HighScore(); //high score of the game is calculated and displayed
                 winner.playerHighScore(name1, name2, (double)playerOneScore, (double)playerTwoScore);
             }
 
         }
 
-        
-        public void kinds()
-        { 
-        }
 
 
         public void ThreeOrMore()
@@ -236,12 +232,12 @@ namespace Assignment_2
 
                 Die DiceValues = new Die();
 
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 5; i++) //gets randomly generated dice rolls
                 {
                     dieorigionalList.Add(DiceValues.Roll());
                 }
 
-                for (int z = 0; z < dieorigionalList.Count; z++)
+                for (int z = 0; z < dieorigionalList.Count; z++) //adds these to a list
                 {
                     Console.WriteLine($"Die {z+1}: {dieorigionalList[z]}");
                 }
@@ -249,13 +245,13 @@ namespace Assignment_2
 
 
                 List<int> moreThanOneNumber = new List<int>();
-                for (int i = 0; i < dieorigionalList.Count; i++)
+                for (int i = 0; i < dieorigionalList.Count; i++) //iterates through list and checks if there are more than one of a number
                 {
                     for (int j = i + 1; j < dieorigionalList.Count; j++)
                     {
                         if (dieorigionalList[i] == dieorigionalList[j] && !moreThanOneNumber.Contains(dieorigionalList[i]))
                         {
-                            moreThanOneNumber.Add(dieorigionalList[i]);
+                            moreThanOneNumber.Add(dieorigionalList[i]); //adds the number that there is more than one of to a different list
                             break;
                         }
                     }
@@ -280,7 +276,7 @@ namespace Assignment_2
                         }
                     }
 
-                    values.Add(item, counter);
+                    values.Add(item, counter); //adds the number that has more than one of and then the amount of times it appears to a dictionary
                 }
 
                 

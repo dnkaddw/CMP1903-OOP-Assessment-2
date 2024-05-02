@@ -11,7 +11,6 @@ namespace Assignment_2
             string chosenGame;
             bool valid = false;
 
-
             do
             {
                 Console.WriteLine("Do you play \'Sevens Out\' or \'Three Or More\'  Game");
